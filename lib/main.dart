@@ -4,22 +4,29 @@ import 'package:portfolioflutter/responsive/mobile_scaffold.dart';
 import 'package:portfolioflutter/responsive/responsive_layout.dart';
 import 'package:portfolioflutter/responsive/tablet_scaffold.dart';
 
+import 'views/home/home_view.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ResponsiveLayout(
-        mobileScaffold: const MobileScaffold(),
-        tabletScaffold: const TabletScaffold(),
-        desktopScaffold: const DesktopScaffold(),
-      ),
+      title: 'Data Science Project',
+      theme: ThemeData(
+          primarySwatch: Colors.pink,
+          textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Roboto')),
+      // home: ResponsiveLayout(
+      //   mobileScaffold: const MobileScaffold(),
+      //   tabletScaffold: const TabletScaffold(),
+      //   desktopScaffold: const DesktopScaffold(),
+      // ),
+      home: HomeView(),
     );
   }
 }
