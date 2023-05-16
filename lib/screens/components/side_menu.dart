@@ -26,6 +26,8 @@ class SideMenu extends StatelessWidget {
                     const Progress(),
                     const SizedBox(height: defaultPadding),
                     MembersInfoText(),
+                    const SizedBox(height: defaultPadding),
+                    const Divider()
                   ],
                 ),
               )

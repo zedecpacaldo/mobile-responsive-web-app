@@ -25,10 +25,33 @@ class _MembersInfoTextState extends State<MembersInfoText> {
 
   @override
   Widget build(BuildContext context) {
-    List<AssetImage> researcherPics = researchers.map((researcher) => AssetImage(researcher.image)).toList();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Project Adviser",
+                    style: Theme.of(context).textTheme.subtitle2,
+                  ),
+                ],
+              ),
+            ),
+            const Expanded(
+                child: Text(
+                  "Dr. Paul Regonia",
+                  textAlign: TextAlign.end,
+                )
+            ),
+          ],
+        ),
+        SizedBox(height: defaultPadding/2),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,12 +72,16 @@ class _MembersInfoTextState extends State<MembersInfoText> {
                     },
                     child: GestureDetector(
                       onTap: (){
-                        changeHover(-1);
+                        if(selected == 0){
+                          changeHover(-1);
+                        } else {
+                          changeHover(0);
+                        }
                       },
                       child: Text(
-                        researchers[0].name,
-                        textAlign: TextAlign.end,
-                        style: selected == 0?TextStyle(color: Colors.white):null
+                          researchers[0].name,
+                          textAlign: TextAlign.end,
+                          style: selected == 0?TextStyle(color: Colors.white):null
                       ),
                     ),
                   ),
@@ -65,7 +92,11 @@ class _MembersInfoTextState extends State<MembersInfoText> {
                     },
                     child: GestureDetector(
                       onTap: (){
-                        changeHover(-1);
+                        if(selected == 1){
+                          changeHover(-1);
+                        } else {
+                          changeHover(1);
+                        }
                       },
                       child: Text(
                           researchers[1].name,
@@ -81,7 +112,11 @@ class _MembersInfoTextState extends State<MembersInfoText> {
                     },
                     child: GestureDetector(
                       onTap: (){
-                        changeHover(-1);
+                        if(selected == 2){
+                          changeHover(-1);
+                        } else {
+                          changeHover(2);
+                        }
                       },
                       child: Text(
                         researchers[2].name,
@@ -96,7 +131,7 @@ class _MembersInfoTextState extends State<MembersInfoText> {
           ],
         ),
         const SizedBox(height: defaultPadding),
-        Divider(),
+        const Divider(),
         const SizedBox(height: defaultPadding),
         Text(
           "About Us",
@@ -105,7 +140,7 @@ class _MembersInfoTextState extends State<MembersInfoText> {
         if(selected == -1)
         const Column(
           children: [
-            const SizedBox(height: defaultPadding),
+            SizedBox(height: defaultPadding),
             Text(
               groupDescription,
               style: TextStyle(height: 2),
@@ -117,9 +152,18 @@ class _MembersInfoTextState extends State<MembersInfoText> {
         Column(
           children: [
             const SizedBox(height: defaultPadding),
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: researcherPics[selected],
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  researchers[selected].image,
+                  fit: BoxFit.cover
+                ),
+              ),
             ),
             const SizedBox(height: defaultPadding),
             Text(

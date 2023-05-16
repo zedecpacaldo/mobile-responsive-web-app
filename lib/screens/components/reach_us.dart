@@ -2,10 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolioflutter/responsive.dart';
 import 'package:portfolioflutter/screens/components/reach_us_card.dart';
-
+import 'dart:html' as html;
 import '../../constants.dart';
 import '../../contents.dart';
-import '../../models/WebComponents.dart';
 
 class ReachUs extends StatelessWidget {
   const ReachUs({
@@ -24,7 +23,7 @@ class ReachUs extends StatelessWidget {
             style: Theme.of(context).textTheme.headline6,
           ),
           const SizedBox(height: defaultPadding),
-          const Responsive(
+          Responsive(
             mobile: ReachUsGridView(crossAxisCount: 1, childAspectRatio: 3),
             mobileLarge: ReachUsGridView(crossAxisCount: 2, childAspectRatio: 1.78),
             tablet: ReachUsGridView(childAspectRatio: 1.68),
@@ -36,13 +35,26 @@ class ReachUs extends StatelessWidget {
   }
 }
 
-class ReachUsGridView extends StatelessWidget {
-  const ReachUsGridView({
+class ReachUsGridView extends StatefulWidget {
+   ReachUsGridView({
     super.key, this.crossAxisCount = 3, this.childAspectRatio = 1.95,
   });
 
   final int crossAxisCount;
   final double childAspectRatio;
+
+  @override
+  State<ReachUsGridView> createState() => _ReachUsGridViewState();
+}
+
+class _ReachUsGridViewState extends State<ReachUsGridView> {
+  int isHovered = -1;
+
+  void _changeHovered(int chosen) {
+    setState(() {
+      isHovered = chosen;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,12 +63,35 @@ class ReachUsGridView extends StatelessWidget {
       shrinkWrap: true,
       itemCount: webComponents.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
-          childAspectRatio: childAspectRatio,
+          crossAxisCount: widget.crossAxisCount,
+          childAspectRatio: widget.childAspectRatio,
           crossAxisSpacing: defaultPadding,
           mainAxisSpacing: defaultPadding/3
       ),
-      itemBuilder: (context, index) => ReachUsCard(webComponent: webComponents[index]),
+      itemBuilder: (context, index) => MouseRegion(
+        onEnter: (event) {
+          if(index != 1){
+            setState(() {
+              _changeHovered(index);
+            });
+          }
+        },
+        onExit: (event) {
+          if(index != 1){
+            setState(() {
+              _changeHovered(-1);
+            });
+          }
+        },
+        child: GestureDetector(
+          onTap: (){
+            if(index == 0){
+              html.window.open(githubLink, "GitHub Repository");
+            }
+          },
+          child: ReachUsCard(webComponent: webComponents[index], isSelected: isHovered==index?true:false)
+        ),
+      ),
     );
   }
 }

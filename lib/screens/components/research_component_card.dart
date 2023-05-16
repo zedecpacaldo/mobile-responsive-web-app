@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,33 @@ class ResearchComponentCard extends StatelessWidget {
           ),
           const Spacer(),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              AwesomeDialog(
+                dialogBackgroundColor: bgColor,
+                showCloseIcon: true,
+                dialogType: DialogType.noHeader,
+                context: context,
+                padding: EdgeInsets.all(defaultPadding),
+                body: Container(
+                  padding: EdgeInsets.only(left: defaultPadding, right: defaultPadding, bottom: defaultPadding),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                          researchComponent.title,
+                          style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 25)
+                      ),
+                      SizedBox(height: defaultPadding),
+                      Text(
+                        researchComponent.description,
+                        style: const TextStyle(height: 2, fontSize: 16),
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                ),
+              ).show();
+            },
             style: TextButton.styleFrom(
               padding: EdgeInsets.zero, // Set contentPadding to EdgeInsets.zero
             ),
