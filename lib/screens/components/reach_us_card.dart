@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import '../../models/WebComponents.dart';
-import '../../responsive.dart';
 
 class ReachUsCard extends StatelessWidget {
   final WebComponents webComponent;
@@ -19,22 +18,17 @@ class ReachUsCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: Text(
-              webComponent.section,
-              style: Theme.of(context).textTheme.subtitle2,
-            ),
+          Text(
+            webComponent.section,
+            style: Theme.of(context).textTheme.subtitle2,
           ),
-          if (!Responsive.isMobileLarge(context) || !Responsive.isMobile(context))
-          const SizedBox(height: defaultPadding),
-          Expanded(
-            child: Text(
-              webComponent.text,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(height: 1.5),
-            ),
-          )
+          SizedBox(height: defaultPadding),
+          Text(
+            webComponent.text,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(height: 1.5),
+          ),
         ],
       ),
     );

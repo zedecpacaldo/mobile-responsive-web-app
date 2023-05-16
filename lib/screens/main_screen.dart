@@ -23,28 +23,31 @@ class MainScreen extends StatelessWidget {
           ),
         ),
       ),
-      drawer: SideMenu(),
+      drawer: const SideMenu(),
       body: Center(
         child: Container(
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             maxWidth: maxWidth
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (Responsive.isDesktop(context))
-              Expanded(
+              const Expanded(
                 flex: 2,
                 child: SideMenu()
               ),
-              SizedBox(width: defaultPadding),
               Expanded(
                 flex: 7,
                 child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ...children,
-                    ],
+                  physics: AlwaysScrollableScrollPhysics(),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+                    child: Column(
+                      children: [
+                        ...children,
+                      ],
+                    ),
                   ),
                 )
               ),

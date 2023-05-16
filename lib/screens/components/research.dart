@@ -39,13 +39,14 @@ class ResearchGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: researchComponents.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
-          childAspectRatio: childAspectRatio,
-          crossAxisSpacing: defaultPadding,
-          mainAxisSpacing: defaultPadding
+        crossAxisCount: crossAxisCount,
+        childAspectRatio: childAspectRatio,
+        crossAxisSpacing: defaultPadding,
+        mainAxisSpacing: defaultPadding
       ),
       itemBuilder: (context, index) => ResearchComponentCard(researchComponent: researchComponents[index],),
     );

@@ -30,11 +30,11 @@ class HomeBanner extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Leni Robredo's alleged allegiance\nwith the CPP-NDA-NDF",
-                    style: Responsive.isDesktop(context) ? Theme.of(context).textTheme.headline3!.copyWith(
+                    "Leni Robredo's alleged allegiance\nwith the CPP-NPA-NDF",
+                    style: Responsive.isDesktop(context) ? Theme.of(context).textTheme.headline4!.copyWith(
                         fontWeight: FontWeight.bold,
                         color: Colors.white
-                    ) : Theme.of(context).textTheme.headline5!.copyWith(
+                    ) : Theme.of(context).textTheme.headline6!.copyWith(
                         fontWeight: FontWeight.bold,
                         color: Colors.white
                     ),

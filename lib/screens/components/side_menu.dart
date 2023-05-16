@@ -23,7 +23,7 @@ class SideMenu extends StatelessWidget {
                 padding: const EdgeInsets.all(defaultPadding),
                 child: Column(
                   children: [
-                    Progress(),
+                    const Progress(),
                     const SizedBox(height: defaultPadding),
                     MembersInfoText(),
                   ],

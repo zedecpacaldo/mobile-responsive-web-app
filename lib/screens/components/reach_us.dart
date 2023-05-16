@@ -25,9 +25,9 @@ class ReachUs extends StatelessWidget {
           ),
           const SizedBox(height: defaultPadding),
           const Responsive(
-            mobile: ReachUsGridView(crossAxisCount: 1, childAspectRatio: 3.27),
-            mobileLarge: ReachUsGridView(crossAxisCount: 2),
-            tablet: ReachUsGridView(childAspectRatio: 2.16),
+            mobile: ReachUsGridView(crossAxisCount: 1, childAspectRatio: 3),
+            mobileLarge: ReachUsGridView(crossAxisCount: 2, childAspectRatio: 1.78),
+            tablet: ReachUsGridView(childAspectRatio: 1.68),
             desktop: ReachUsGridView()
           )
         ],
@@ -38,7 +38,7 @@ class ReachUs extends StatelessWidget {
 
 class ReachUsGridView extends StatelessWidget {
   const ReachUsGridView({
-    super.key, this.crossAxisCount = 3, this.childAspectRatio = 2.5,
+    super.key, this.crossAxisCount = 3, this.childAspectRatio = 1.95,
   });
 
   final int crossAxisCount;
@@ -47,6 +47,7 @@ class ReachUsGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: webComponents.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
