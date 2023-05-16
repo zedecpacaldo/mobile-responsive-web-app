@@ -25,6 +25,7 @@ class _MembersInfoTextState extends State<MembersInfoText> {
 
   @override
   Widget build(BuildContext context) {
+    List<AssetImage> researcherPics = researchers.map((researcher) => AssetImage(researcher.image)).toList();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -114,7 +115,7 @@ class _MembersInfoTextState extends State<MembersInfoText> {
             const SizedBox(height: defaultPadding),
             CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage(researchers[selected].image),
+              backgroundImage: researcherPics[selected],
             ),
             const SizedBox(height: defaultPadding),
             Text(

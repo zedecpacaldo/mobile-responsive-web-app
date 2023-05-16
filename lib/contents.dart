@@ -1,3 +1,5 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+
 import 'models/ResearchComponents.dart';
 import 'models/Researcher.dart';
 import 'models/WebComponents.dart';
@@ -5,6 +7,20 @@ import 'models/progress.dart';
 
 
 const String groupDescription = "Welcome to our data science project website! We are a team of computer science students who are passionate about using data science to extract insights. Our project focuses on analyzing tweets regarding Leni Robredo's allegiance with CPP-NDA-NDF. This was very prominent during the 2022 Philippine Presidential Elections. We are interested in understanding the underlying patterns and relationships within the data from tweets, and using this knowledge to make informed decisions.";
+
+final List<TyperAnimatedText> tweets = [
+  TyperAnimatedText("'Leni Terorista'"),
+  TyperAnimatedText("'tangina ni leni NPA'"),
+  TyperAnimatedText("'NO TO LENI NPA TERRORIST'"),
+  TyperAnimatedText("'Leni npa  at palagi lutang'"),
+  TyperAnimatedText("'Si leni npa walang alam sa batas'"),
+  TyperAnimatedText("'Leni. kakampink ng mga terorista.'"),
+  TyperAnimatedText("'Pano si Leni NPA enabler hahahaaha.'"),
+  TyperAnimatedText("'Basta si leni lapitin ng terorista 😂'"),
+  TyperAnimatedText("'2023 na paps Leni ka pa din? NPA ka ata e'"),
+  TyperAnimatedText("'Bobo ka kagaya ni Leni. NPA COMMUNIST ACTIVIST'"),
+  TyperAnimatedText("'Fake news yan... No to leni Terorista suporters'")
+];
 
 final List<ResearchComponent> researchComponents = [
   ResearchComponent(
@@ -39,7 +55,7 @@ final List<WebComponents> webComponents = [
 final List<Researcher> researchers = [
   Researcher(
       name: "Gabriel Enriquez",
-      image: 'images/researchers/zedecpacaldo.png',
+      image: 'images/researchers/gabrielenriquez.jpg',
       description: 'Gabriel Enriquez is a junior computer science student who is very interested in database management and mobile application development. He has some experience when it comes to Python programming and is currently taking on IT Project Management involving route-finding and mapping.'
   ),
   Researcher(

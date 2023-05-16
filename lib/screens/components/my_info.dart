@@ -23,11 +23,11 @@ class MyInfo extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                "PH Twitter Mis/Disinformation Analysis",
+                "CS 132: Data Science Portfolio",
                 style: Theme.of(context).textTheme.subtitle2,
               ),
               Text(
-                "on Leni Robredo's allegiance\nwith CPP-NDA-NDF",
+                "PH Twitter Mis/Disinformation Analysis",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.w200,
