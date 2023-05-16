@@ -1,6 +1,8 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'dart:html' as html;
 
 import '../../constants.dart';
 import '../../models/ResearchComponents.dart';
@@ -29,11 +31,30 @@ class ResearchComponentCard extends StatelessWidget {
               style: Theme.of(context).textTheme.subtitle2
           ),
           const Spacer(),
-          Text(
+          researchComponent.description!=""?Text(
             researchComponent.description,
             maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(height: 1.5),
+          ):Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.white10,
+                  radius: 20,
+                ),
+
+                CircleAvatar(
+                  backgroundColor: Colors.white10,
+                  radius: 20,
+                ),
+                CircleAvatar(
+                  backgroundColor: Colors.white10,
+                  radius: 20,
+                )
+              ],
+            )
           ),
           const Spacer(),
           TextButton(
@@ -54,10 +75,30 @@ class ResearchComponentCard extends StatelessWidget {
                           style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 25)
                       ),
                       SizedBox(height: defaultPadding),
-                      Text(
-                        researchComponent.description,
-                        style: const TextStyle(height: 2, fontSize: 16),
-                        textAlign: TextAlign.left,
+                      researchComponent.html != ""?Html(
+                        data: researchComponent.html,
+                        onLinkTap: (url, _, __) {
+                          html.window.open(url!, "Get Dataset");
+                        },
+                      ):Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.white10,
+                                radius: 20,
+                              ),
+
+                              CircleAvatar(
+                                backgroundColor: Colors.white10,
+                                radius: 20,
+                              ),
+                              CircleAvatar(
+                                backgroundColor: Colors.white10,
+                                radius: 20,
+                              )
+                            ],
+                          )
                       ),
                     ],
                   ),

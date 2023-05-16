@@ -26,23 +26,119 @@ final List<TyperAnimatedText> tweets = [
 final List<ResearchComponent> researchComponents = [
   ResearchComponent(
       title: "Project Formulation",
-      description: "Research Question: Which publications triggered the sudden surge in mis-/disinformation regarding Leni's alleged association with the CPP-NPA-NDF?\n\nHypothesis: The publication of Disinformed news correlates with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.\n\nNull Hypothesis: The publication of Disinformed news has NO correlation with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.\n\nAction Plan: Analyze surges in fake tweets and compare dates with publication of disinformed news"
+      description: "Research Question: Which publications triggered the sudden surge in mis-/disinformation regarding Leni's alleged association with the CPP-NPA-NDF?\n\nHypothesis: The publication of Disinformed news correlates with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.\n\nNull Hypothesis: The publication of Disinformed news has NO correlation with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.\n\nAction Plan: Analyze surges in fake tweets and compare dates with publication of disinformed news",
+      html: '''
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Research Analysis</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white;
+          }
+      
+          h2 {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+          }
+      
+          p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+          }
+        </style>
+      </head>
+      <body>
+        <h2>Research Question:</h2>
+        <p>Which publications triggered the sudden surge in mis-/disinformation regarding Leni's alleged association with the CPP-NPA-NDF?</p>
+        
+        <h2>Hypothesis:</h2>
+        <p>The publication of Disinformed news correlates with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.</p>
+      
+        <h2>Null Hypothesis:</h2>
+        <p>The publication of Disinformed news has NO correlation with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.</p>
+      
+        <h2>Action Plan:</h2>
+        <p>Analyze surges in fake tweets and compare dates with publication of disinformed news.</p>
+      </body>
+      </html>
+      '''
   ),
   ResearchComponent(
       title: "Data Collection",
-      description: "Tweets about the alleged connections of former Vice President Leni Robredo to the CPP-NPA were collected. Tweets collected were from 2016 to 2023 via manual collection and tweet scrapping. In total, 154 tweets were collected, categorized, and analyzed."
+      description: "Tweets about the alleged connections of former Vice President Leni Robredo to the CPP-NPA were collected. Tweets collected were from 2016 to 2023 via manual collection and tweet scrapping. In total, 154 tweets were collected, categorized, and analyzed.",
+      html: '''
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Research Analysis</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white;
+          }
+          p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+          }
+          
+          .bold {
+            font-weight: bold;
+          }
+                
+          figure {
+            margin: 0;
+            padding: 0;
+          }
+      
+          img {
+            max-width: 100%;
+          }
+      
+          figcaption {
+            text-align: center;
+            font-style: italic;
+            margin-top: 5px;
+          }
+          
+         a {
+            color: #FFC107;
+            font-weight: bold;
+            text-decoration: none;
+          }
+        </style>
+      </head>
+      <body>
+        <p>Tweets about the <span class="bold">alleged</span> connections of former Vice President Leni Robredo to the CPP-NPA were collected. Tweets collected were from 2016 to 2023 via manual collection and tweet scraping. In total, 154 tweets were collected, categorized, and analyzed.</p>
+        <figure>
+          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/dataset_sample.png?alt=media&token=aa415d51-b4a8-44b3-bae0-7c20830855dd? alt="Our Dataset">
+          <figcaption>A Snapshot of our Dataset >></figcaption>
+        </figure>
+        <a href="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/dataset.csv?alt=media&token=aa9d1317-ea40-4427-b6df-c0e53b074bb5">Get our Dataset >></a>
+      </body>
+      </html>
+      '''
   ),
   ResearchComponent(
       title: "Data Exploration",
-      description: ""
+      description: '',
+      html: ''
   ),
   ResearchComponent(
       title: "Data Modeling & Analysis",
-      description: ""
+      description: '',
+      html: ''
   ),
   ResearchComponent(
       title: "Data Communication",
-      description: ""
+      description: '',
+      html: ''
   ),
 ];
 
