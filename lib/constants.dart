@@ -1,22 +1,11 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
-var myDefaultBackground = Colors.grey[300];
+const primaryColor = Color(0xFFFFC107);
+const secondaryColor = Color(0xFF242430);
+const darkColor = Color(0xFF191923);
+const bodyTextColor = Color(0xFF8B8B8D);
+const bgColor = Color(0xFF1E1E28);
 
-var myAppBar = AppBar(
-  backgroundColor: Colors.grey[900],
-);
-
-var myDrawer = Drawer(
-  backgroundColor: Colors.grey[300],
-  child: Column(children: const [
-    DrawerHeader(child: Icon(Icons.favorite)),
-    ListTile(
-      leading: Icon(Icons.person_3),
-      title: Text('A B O U T   U S'),
-    ),
-    ListTile(
-      leading: Icon(Icons.chat),
-      title: Text('C O N T A C T   U S'),
-    ),
-  ]),
-);
+const defaultPadding = 20.0;
+const defaultDuration = Duration(seconds: 1);
+const maxWidth = 1440.0;

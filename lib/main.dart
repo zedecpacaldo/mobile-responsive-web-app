@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioflutter/responsive/desktop_scaffold.dart';
-import 'package:portfolioflutter/responsive/mobile_scaffold.dart';
-import 'package:portfolioflutter/responsive/responsive_layout.dart';
-import 'package:portfolioflutter/responsive/tablet_scaffold.dart';
-
-import 'views/home/home_view.dart';
+import 'package:portfolioflutter/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolioflutter/screens/main_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,15 +15,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Data Science Project',
-      theme: ThemeData(
-          primarySwatch: Colors.pink,
-          textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Roboto')),
-      // home: ResponsiveLayout(
-      //   mobileScaffold: const MobileScaffold(),
-      //   tabletScaffold: const TabletScaffold(),
-      //   desktopScaffold: const DesktopScaffold(),
-      // ),
-      home: HomeView(),
+      theme: ThemeData.dark().copyWith(
+        primaryColor:  primaryColor,
+        scaffoldBackgroundColor: bgColor,
+        canvasColor: bgColor,
+        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+          .apply(bodyColor: Colors.white)
+          .copyWith(
+          bodyText1: const TextStyle(color: bodyTextColor),
+          bodyText2: const TextStyle(color: bodyTextColor)
+        )
+      ),
+      home: MainScreen(),
     );
   }
 }
