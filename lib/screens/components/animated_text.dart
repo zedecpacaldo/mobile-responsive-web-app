@@ -17,7 +17,8 @@ class MyAnimatedText extends StatelessWidget {
           color: Colors.white60
       ),
       child: AnimatedTextKit(
-          animatedTexts: tweets
+        animatedTexts: tweets,
+        repeatForever: true,
       ),
     );
   }

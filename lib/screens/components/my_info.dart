@@ -17,7 +17,7 @@ class MyInfo extends StatelessWidget {
             children: [
               Spacer(flex: 2),
               Image.asset(
-                'images/logo.png',
+                'assets/images/logo.png',
                 width: 200,
                 height: 100,
               ),

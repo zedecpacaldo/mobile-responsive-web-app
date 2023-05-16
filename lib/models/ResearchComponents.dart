@@ -1,5 +1,5 @@
 class ResearchComponent {
-  final String? title, description;
+  final String title, description;
 
-  ResearchComponent({this.title, this.description});
+  ResearchComponent({required this.title, required this.description});
 }

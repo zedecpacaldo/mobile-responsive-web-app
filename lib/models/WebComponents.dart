@@ -1,5 +1,5 @@
 class WebComponents {
-  final String? section, text;
+  final String section, text;
 
-  WebComponents({this.section, this.text});
+  WebComponents({required this.section, required this.text});
 }

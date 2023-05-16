@@ -33,61 +33,65 @@ class _MembersInfoTextState extends State<MembersInfoText> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Researchers",
-              style: Theme.of(context).textTheme.subtitle2,
+            Expanded(
+              child: Text(
+                "Researchers",
+                style: Theme.of(context).textTheme.subtitle2,
+              ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                MouseRegion(
-                  onEnter: (event){
-                    changeHover(0);
-                  },
-                  child: GestureDetector(
-                    onTap: (){
-                      changeHover(-1);
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  MouseRegion(
+                    onEnter: (event){
+                      changeHover(0);
                     },
-                    child: Text(
-                      researchers[0].name,
-                      textAlign: TextAlign.end,
-                      style: selected == 0?TextStyle(color: Colors.white):null
-                    ),
-                  ),
-                ),
-                SizedBox(height: defaultPadding/2),
-                MouseRegion(
-                  onEnter: (event){
-                    changeHover(1);
-                  },
-                  child: GestureDetector(
-                    onTap: (){
-                      changeHover(-1);
-                    },
-                    child: Text(
-                        researchers[1].name,
+                    child: GestureDetector(
+                      onTap: (){
+                        changeHover(-1);
+                      },
+                      child: Text(
+                        researchers[0].name,
                         textAlign: TextAlign.end,
-                        style: selected == 1?TextStyle(color: Colors.white):null
+                        style: selected == 0?TextStyle(color: Colors.white):null
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: defaultPadding/2),
-                MouseRegion(
-                  onEnter: (event){
-                    changeHover(2);
-                  },
-                  child: GestureDetector(
-                    onTap: (){
-                      changeHover(-1);
+                  SizedBox(height: defaultPadding/2),
+                  MouseRegion(
+                    onEnter: (event){
+                      changeHover(1);
                     },
-                    child: Text(
+                    child: GestureDetector(
+                      onTap: (){
+                        changeHover(-1);
+                      },
+                      child: Text(
+                          researchers[1].name,
+                          textAlign: TextAlign.end,
+                          style: selected == 1?TextStyle(color: Colors.white):null
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: defaultPadding/2),
+                  MouseRegion(
+                    onEnter: (event){
+                      changeHover(2);
+                    },
+                    child: GestureDetector(
+                      onTap: (){
+                        changeHover(-1);
+                      },
+                      child: Text(
                         researchers[2].name,
                         textAlign: TextAlign.end,
-                        style: selected == 2?TextStyle(color: Colors.white):null
+                        style: selected == 2?TextStyle(color: Colors.white):null,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
