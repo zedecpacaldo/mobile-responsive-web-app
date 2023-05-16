@@ -34,9 +34,9 @@ class HomeBanner extends StatelessWidget {
                     style: Responsive.isDesktop(context) ? Theme.of(context).textTheme.headline4!.copyWith(
                         fontWeight: FontWeight.bold,
                         color: Colors.white
-                    ) : Theme.of(context).textTheme.headline6!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
+                    ) : Theme.of(context).textTheme.bodySmall!.copyWith(
+                        color: Colors.white,
+                        fontSize: 16
                     ),
                   ),
                   if (Responsive.isMobileLarge(context))

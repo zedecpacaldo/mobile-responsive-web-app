@@ -24,7 +24,7 @@ class ReachUs extends StatelessWidget {
           ),
           const SizedBox(height: defaultPadding),
           Responsive(
-            mobile: ReachUsGridView(crossAxisCount: 1, childAspectRatio: 3),
+            mobile: ReachUsGridView(crossAxisCount: 1, childAspectRatio: 2.9),
             mobileLarge: ReachUsGridView(crossAxisCount: 2, childAspectRatio: 1.78),
             tablet: ReachUsGridView(childAspectRatio: 1.68),
             desktop: ReachUsGridView()
