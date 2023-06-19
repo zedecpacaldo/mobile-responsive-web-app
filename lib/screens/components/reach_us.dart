@@ -1,5 +1,7 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:portfolioflutter/responsive.dart';
 import 'package:portfolioflutter/screens/components/reach_us_card.dart';
 import 'dart:html' as html;
@@ -87,6 +89,8 @@ class _ReachUsGridViewState extends State<ReachUsGridView> {
           onTap: (){
             if(index == 0){
               html.window.open(githubLink, "GitHub Repository");
+            } else if (index == 2){
+              html.window.open(contactUsLink, "Contact Us!");
             }
           },
           child: ReachUsCard(webComponent: webComponents[index], isSelected: isHovered==index?true:false)
