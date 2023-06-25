@@ -27,7 +27,7 @@ final List<TyperAnimatedText> tweets = [
 final List<ResearchComponent> researchComponents = [
   ResearchComponent(
       title: "Project Formulation",
-      description: "Research Question: Which publications triggered the sudden surge in mis-/disinformation regarding Leni's alleged association with the CPP-NPA-NDF?\n\nHypothesis: The publication of Disinformed news correlates with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.\n\nNull Hypothesis: The publication of Disinformed news has NO correlation with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.\n\nAction Plan: Analyze surges in fake tweets and compare dates with publication of disinformed news",
+      description: "Research Question: Is there a significant change in the amount of fake news regarding Leni Robredo's allegiance with the CPP-NPA-NDF before and after her announcement of running for the presidency?\n\nHypothesis: There is a significant change in the amount of fake news regarding Leni’s alleged allegiance with the CPP-NPA-NDF before and after her announcement of running for the presidency.\n\nNull Hypothesis: There is NO significant change in the amount of fake news regarding Leni’s alleged allegiance with the CPP-NPA-NDF before and after her announcement of running for the presidency.\n\nAction Plan: Analyze surges in fake tweets and compare dates with publication of disinformed news",
       html: '''
       <!DOCTYPE html>
       <html>
@@ -55,16 +55,19 @@ final List<ResearchComponent> researchComponents = [
       </head>
       <body>
         <h2>Research Question:</h2>
-        <p>Which publications triggered the sudden surge in mis-/disinformation regarding Leni's alleged association with the CPP-NPA-NDF?</p>
+        <p>Is there a significant change in the amount of fake news regarding Leni Robredo's allegiance with the CPP-NPA-NDF before and after her announcement of running for the presidency?</p>
         
         <h2>Hypothesis:</h2>
-        <p>The publication of Disinformed news correlates with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.</p>
+        <p>There is a significant change in the amount of fake news regarding Leni’s alleged allegiance with the CPP-NPA-NDF before and after her announcement of running for the presidency.</p>
       
         <h2>Null Hypothesis:</h2>
-        <p>The publication of Disinformed news has NO correlation with the sudden spike in Mis/Disinformed tweets regarding Leni's alleged allegiance the CPP-NDA-NDF.</p>
+        <p>There is NO significant change in the amount of fake news regarding Leni’s alleged allegiance with the CPP-NPA-NDF before and after her announcement of running for the presidency.</p>
       
         <h2>Action Plan:</h2>
-        <p>Analyze surges in fake tweets and compare dates with publication of disinformed news.</p>
+        <p>Analyze and compare surges of data before and after Leni Robredo's announcement of running for the presidency election.</p>
+        
+        <h2>Note:</h2>
+        <p>Interval of the data set for between and after Leni Robredo's announcement of running for the presidency election is [2016, 10-07-2021] U [10-07-2021, 05-07-2022]</p>
       </body>
       </html>
       '''
@@ -326,6 +329,12 @@ final List<ResearchComponent> researchComponents = [
             margin-bottom: 10px;
           }
           
+          h2 {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+          }
+          
           .bold {
             font-weight: bold;
           }
@@ -355,26 +364,110 @@ final List<ResearchComponent> researchComponents = [
       <body>
         <p>For data modeling, we are interested in relating the most engaged tweets with the behavior of the number of engagements per month. That being said, We extracted the top 5 liked, retweeted, and replied tweets and made projected them on different line plots to visually inspect their impacts to the behavior of the line. Does these high engaging posts directly influence the direction of the line? This is one of the few questions we will try to answer.</p>
         <figure>
-          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/348385635_705983641331794_2041206259504574311_n.png?alt=media&token=a5fa8120-5804-4d58-8cc4-d46b77de1fb7 alt="Trends in the Sum of Likes for Tweets per Month">
+          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/likes.png?alt=media&token=9ce2cef0-c8e6-4b64-bfa2-1b1116154d8b alt="Trends in the Sum of Likes for Tweets per Month">
         </figure>
-        <p>Analyzing the time series for the tweet likes per month, we can see that 4 out of the 5 most liked tweets directly create a further increase in the total number of likes of other posts. These engaging posts could be contributing to the further increase of engagement of other posts.</p>
+        <p>Analyzing the time series for the tweet likes per month, we can see that 9 out of the 10 most liked tweets directly create a further increase in the total number of likes of other posts. These engaging posts could be contributing to the further increase of engagement of other posts.</p>
         <figure>
-          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/353660926_788727122902545_3148128571766421761_n.png?alt=media&token=4fba00e7-6ee1-4d03-a2e9-dfccf94ff165 alt="Trends in the Sum of Retweets for Tweets per Month">
+          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/retweets.png?alt=media&token=76e68055-b95a-4755-9dde-96cff730d63f alt="Trends in the Sum of Retweets for Tweets per Month">
         </figure>
-        <p>Analyzing the time series for the tweet retweets per month, we can see that 5 of the most retweeted tweets directly create a further increase in the total number of likes of other posts. These engaging posts could be contributing to the further increase of engagement of other posts.</p>
+        <p>Analyzing the time series for the tweet retweets per month, we can see that all of the most retweeted tweets directly create a further increase in the total number of likes of other posts. These engaging posts could be contributing to the further increase of engagement of other posts.</p>
         <figure>
-          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/348385758_5586487794716738_9073611188453658647_n.png?alt=media&token=049c80ee-0bc4-4e8e-a549-5d4e48434b41 alt="Trends in the Sum of Replies for Tweets per Month">
+          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/replies.png?alt=media&token=387efa5e-be29-405b-afdb-36ca470c5074 alt="Trends in the Sum of Replies for Tweets per Month">
         </figure>
-        <p>Analyzing the time series for the tweet retweets per month, we can see that 4 out of 5 of the most replied tweets directly create a further increase in the total number of likes of other posts. These engaging posts could be contributing to the further increase of engagement of other posts.</p>
-        <p>Overall, most of the top 5 engaging tweets positively reinforces the direction of engagement.</p>
+        <p>Analyzing the time series for the tweet retweets per month, we can see that 9 out of 10 of the most replied tweets directly create a further increase in the total number of likes of other posts. These engaging posts could be contributing to the further increase of engagement of other posts.</p>
+        <p>Overall, most of the top 10 engaging tweets positively reinforces the direction of engagement.</p><figure>
+          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/ttest.png?alt=media&token=2f98122a-e85d-42fe-971b-5e6d01a3ae53 alt="T Test and P Value">
+        </figure>
+        <p>The t-test shows that the t-test value is -2.355, indicating that the mean of the first group (before announcement & after elections) is smaller than the mean of the second group (After announcement until last day of the campaign period). Furthermore, the t-test shows a p-value of 0.021 (< 0.05), indicating a statistically significant difference between the two groups.</p>
+        <h2>Conclusion</h2>
+        
+        <p>Reject Null Hypothesis. There is a significant difference in the amount of fake news tweets before Leni Robredo’s announcement of presidential candidacy and after the elections and after her announcement until the last day of the Official Campaign period. There is also an increase in engagement (likes, retweets, and replies) for tweets posted after Robredo’s announcement until the last day of the Official Campaign period, suggesting an increased public interest on Leni-related tweets and/or a massive disinformation campaign against Leni Robredo’s political pact.</p>
+        
+        <h2>Recommendation</h2>
+        <p>Recommendations include increased number of entries, integration of sentiment analysis for determining language patterns, and identify more specific events during the election period that cause local and global spikes in the amount of disinformation tweets and their engagement.</p>
       </body>
       </html>
       '''
   ),
   ResearchComponent(
       title: "Data Communication",
-      description: '',
-      html: ''
+      description: 'The spikes shown under the Data Analysis portion indicates increase interests from voters about Leni\'s alleged alliance with the CPP-NPA-NDF. It can also report instances of massive social media disinformation campaigns against Leni. The study however, does not identify the motive of the engagements. As such, we put this in our recommendations, as this is not within the scope of the study.',
+      html: '''
+       <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Research Analysis</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white;
+          }
+          p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+          }
+          
+          h2 {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+          }
+          
+          .bold {
+            font-weight: bold;
+          }
+                
+          figure {
+            margin: 0;
+            padding: 0;
+          }
+      
+          img {
+            max-width: 100%;
+          }
+      
+          figcaption {
+            text-align: center;
+            font-style: italic;
+            margin-top: 5px;
+          }
+          
+         a {
+            color: #FFC107;
+            font-weight: bold;
+            text-decoration: none;
+          }
+        </style>
+      </head>
+      <body>
+        <p>The spikes shown under the Data Analysis portion indicates increase interests from voters about Leni\'s alleged alliance with the CPP-NPA-NDF. It can also report instances of massive social media disinformation campaigns against Leni. The study however, does not identify the motive of the engagements. As such, we put this in our recommendations, as this is not within the scope of the study.</p>
+        <h2>Watch the Facts Exhibit</h2>
+        <figure>
+          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/commu1.jpg?alt=media&token=f9ca46d1-9e0a-4972-b85a-2b9d1c06aa67">
+        </figure>
+        <figure>
+          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/commu2.png?alt=media&token=b87ca487-f566-4b4c-be15-0b774ead2119">
+        </figure>
+        <figure>
+          <img src="https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/commu3.jpg?alt=media&token=2152428d-74c8-4727-aa36-ec521fdcec20">
+        </figure>
+        <figure>
+          <img src=https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/commu4.jpg?alt=media&token=e70774cb-5a53-4931-b024-70a87f16dfae">
+        </figure>
+        <figure>
+          <img src=https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/commu5.jpg?alt=media&token=63096aa4-1281-4a54-8f13-76bc4b745b7e">
+        </figure>
+        <figure>
+          <img src=https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/commu6.jpg?alt=media&token=a97bcf07-55fb-4919-afbd-f4399d6eb1dc">
+        </figure>
+        <figure>
+          <img src=https://firebasestorage.googleapis.com/v0/b/data-science-portfolio-4fb80.appspot.com/o/commu8.png?alt=media&token=5884ee65-4b01-4fe3-8960-806b49e4c58a">
+        </figure>
+      </body>
+      </html>
+      '''
   ),
 ];
 
@@ -416,5 +509,5 @@ List<Progress> progress = [
   Progress(name: 'Data Collection', value: 1),
   Progress(name: 'Data Exploration', value: 1),
   Progress(name: 'Data Modeling & Analysis', value: 1),
-  Progress(name: 'Data Communication', value: 0),
+  Progress(name: 'Data Communication', value: 1),
 ];
